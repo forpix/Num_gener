@@ -34,13 +34,7 @@ def notifyFailed() {
   emailext (
       subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
       body: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]': Check console output at '${env.BUILD_URL}' [${env.BUILD_NUMBER}]",
-      to:"${GIT_COMMIT_EMAIL}"
-
-    
-    body: 'Find attachments', 
-    subject: 'test', 
-    to: 'test@me.org'
-
-error ("stage failed...")
+      to:"${GIT_COMMIT_EMAIL}" 
+ error ("stage failed...")
     )
 }
