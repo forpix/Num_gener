@@ -1,5 +1,5 @@
 @Library('github.com/cloudogu/ces-build-lib@6cd41e0')
-import com.cloudogu.ces.cesbuildlib.*
+
 
 
 node {
