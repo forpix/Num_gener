@@ -1,3 +1,7 @@
+@Library('github.com/cloudogu/ces-build-lib@6cd41e0')
+import com.cloudogu.ces.cesbuildlib.*
+
+
 node {
 	try {
     stage ('\u2780 Stage') {
@@ -12,7 +16,7 @@ node {
 }
    stage ('\u2781 Stage') {
    echo 'branch'
-   echo "${callCommitid}"
+  println 'the push ' +callcommitid(Calling theSail)
    sleep time:1, unit:"MINUTES"
    echo "all new here"
    def scmVars=checkout scm
@@ -39,7 +43,7 @@ def notifyFailed() {
     )
 }
 
-def  callCommitid {
+def  callCommitid(String a) {
   sh(returnStdout: true, script: "git log --date=short --pretty=format:'%ad %aN <%ae> %n%n%x09* %s%d%n%b'").trim()
 }
 
