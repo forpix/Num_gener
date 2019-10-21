@@ -16,7 +16,7 @@ node {
 }
    stage ('\u2781 Stage') {
    echo 'branch'
-  println 'the push ' +callcommitid(Calling theSail)
+  println 'the push ' +callcommitid('Calling theSail')
    sleep time:1, unit:"MINUTES"
    echo "all new here"
    def scmVars=checkout scm
